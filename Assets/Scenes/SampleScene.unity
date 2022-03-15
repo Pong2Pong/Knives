@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106858989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.467, y: 1.068, z: 0}
+  m_LocalPosition: {x: 0.484, y: 1.067, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 982696823}
@@ -307,7 +307,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 04a3d9282fc9547448e2ca08ca0efb94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503595249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.661, y: -0.475, z: 0}
+  m_LocalPosition: {x: -1.654, y: -0.489, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 982696823}
@@ -484,7 +484,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 02441cfdb08977b479f5d7e67220149f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -589,6 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982696823}
   - component: {fileID: 982696824}
+  - component: {fileID: 982696825}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Wood
@@ -626,9 +627,31 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0103132725}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 3.3155057
+--- !u!114 &982696825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982696822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c36737fa7c051245bee65d73781a88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knives: 6
+  speed: 1
+  bombochka: {fileID: 5698778871027818384, guid: 895e03ede1525444abe6031b53418587, type: 3}
+  knife: {fileID: 515505947808161852, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
+  bombPos: {x: 0, y: 4, z: 0}
+  knifePos: {x: 0, y: -5, z: 0}
+  parts:
+  - {fileID: 1644993920}
+  - {fileID: 106858989}
+  - {fileID: 503595249}
 --- !u!1 &1632695106
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644993920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.494, y: -1.655, z: 0}
+  m_LocalPosition: {x: 1.51, y: -1.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 982696823}
@@ -866,7 +889,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c1af6da5e1164a64a93716fa7a00b864, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -878,60 +901,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &515505947681436075
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161842, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 515505947808161852, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
-      propertyPath: m_Name
-      value: Knife
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
