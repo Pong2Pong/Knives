@@ -549,7 +549,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 8.6042595
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -642,16 +642,128 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c36737fa7c051245bee65d73781a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knives: 6
-  speed: 1
+  hp: 3
+  rotation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.6814415
+      outSlope: 2.6814415
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.501565
+    - serializedVersion: 3
+      time: 0.94999695
+      value: 1.0022836
+      inSlope: 0.03216014
+      outSlope: 0.03216014
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1.6666718
+      value: -0.0050964355
+      inSlope: -1.5317547
+      outSlope: -1.5317547
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.7833333
+      outWeight: 0.1755753
+    - serializedVersion: 3
+      time: 3.0007012
+      value: -1.00405
+      inSlope: -0.0067026378
+      outSlope: -0.0067026378
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15207672
+      outWeight: 0.7566633
+    - serializedVersion: 3
+      time: 4
+      value: 0
+      inSlope: 1.8757226
+      outSlope: 1.8757226
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.21572423
+      outWeight: 0
+    m_PreInfinity: 1
+    m_PostInfinity: 1
+    m_RotationOrder: 4
   bombochka: {fileID: 5698778871027818384, guid: 895e03ede1525444abe6031b53418587, type: 3}
   knife: {fileID: 515505947808161852, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
   bombPos: {x: 0, y: 4, z: 0}
   knifePos: {x: 0, y: -5, z: 0}
-  parts:
-  - {fileID: 1644993920}
-  - {fileID: 106858989}
-  - {fileID: 503595249}
+--- !u!1 &1160993623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160993626}
+  - component: {fileID: 1160993625}
+  - component: {fileID: 1160993624}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1160993624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160993623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1160993625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160993623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1160993626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160993623}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632695106
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,8 +840,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632695106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1757, y: -1.41, z: 0}
-  m_LocalScale: {x: 1.7350085, y: 1.4682779, z: 1}
+  m_LocalPosition: {x: -0.0262, y: 0.0033, z: 0}
+  m_LocalScale: {x: 0.91241306, y: 0.9074664, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1

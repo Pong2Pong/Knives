@@ -4,51 +4,49 @@ using UnityEngine;
 
 public class Wood : MonoBehaviour
 {
-    public int knives;
-    [SerializeField] private float speed;
+    public int hp;
+    private float curTime;
+    [SerializeField] private AnimationCurve rotation;
 
     [SerializeField] private GameObject bombochka, knife;
 
     public Vector3 bombPos, knifePos;
-    public GameObject[] parts = new GameObject[3];
-    Rigidbody2D[] rb = new Rigidbody2D[3];
+    private Rigidbody2D rb ;
 
     void Start()
     {
         Instantiate(knife, knifePos, Quaternion. identity);
-        for (int i = 0; i < 3; i++)
-        {
-            rb[i] = parts[i].GetComponent<Rigidbody2D>();
-        }
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 270 * Time.deltaTime * speed));
+        curTime += Time.deltaTime;
+        transform.Rotate(new Vector3(0, 0, 270 * Time.deltaTime * rotation.Evaluate(curTime)));
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        print("Collision with");
-        print(collider.name);
         if(collider.tag == "Knife")
         {
-            if (knives == 0)
+            if (hp == 0)
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = transform.childCount - 1; i >= 0; i--)
                 {
-                    rb[i].bodyType = RigidbodyType2D.Dynamic;
-                    parts[i].transform.parent = null;
+                    rb = transform.GetChild(i).GetComponent<Rigidbody2D>();
+                    rb.WakeUp();
+                    rb.gravityScale = 1;
+                    rb.bodyType = RigidbodyType2D.Dynamic;
+                    rb.AddForce(new Vector2(Random.Range(-100,100), Random.Range(-100,100)), ForceMode2D.Force);
+                    transform.GetChild(i).parent = null;
                 }
                 Destroy(gameObject);
                 Instantiate(bombochka, bombPos, Quaternion.identity);
             }
-            else if (knives > 0)
+            else if (hp > 0)
             {
                 Instantiate(knife, knifePos, Quaternion.identity);
-                knives--;
+                hp--;
             }
         }
     }

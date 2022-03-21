@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Knife : MonoBehaviour
 {
     private bool used = false;
+    private int difficultyLevel;
     public GameObject wood;
     Rigidbody2D rb;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.localScale = new Vector3(0.6f, 0.6f, 1);
         wood = GameObject.Find("Wood");
     }
     void Update()
@@ -27,11 +29,10 @@ public class Knife : MonoBehaviour
     {
         if (collider.tag == "Knife")
         {
-            print("loose");
+            Level_Generator.GenerateLevel();
         }
         else if (collider.name == "Wood")
         {
-            print("Collided with wood");
             transform.parent = wood.transform;
             rb.Sleep();
         }
