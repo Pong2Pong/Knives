@@ -7,7 +7,7 @@ public class Wood : MonoBehaviour
     public int hp;
     private float curTime;
     [SerializeField] private AnimationCurve rotation;
-
+    [SerializeField] private GameObject knifeIcon;
     [SerializeField] private GameObject bombochka, knife;
 
     public Vector3 bombPos, knifePos;
@@ -15,6 +15,10 @@ public class Wood : MonoBehaviour
 
     void Start()
     {
+        for(int i = hp; i>=0; i--)
+        {
+            Instantiate(knifeIcon, new Vector2(-4f,-8f+i),Quaternion.identity);
+        }
         Instantiate(knife, knifePos, Quaternion. identity);
     }
 
