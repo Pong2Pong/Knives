@@ -704,7 +704,6 @@ Transform:
   - {fileID: 1644993921}
   - {fileID: 106858990}
   - {fileID: 503595250}
-  - {fileID: 1559535141}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -788,7 +787,8 @@ MonoBehaviour:
     m_PreInfinity: 1
     m_PostInfinity: 1
     m_RotationOrder: 4
-  knifeIcon: {fileID: 4646032803334770926, guid: 34fed973981aa8e418f86d70e5ef315e, type: 3}
+  knifeIcon: {fileID: 1559535140}
+  hitParticles: {fileID: 805620750824538501, guid: 5af4648a7e851574eaa5a452f531064e, type: 3}
   bombochka: {fileID: 5698778871027818384, guid: 895e03ede1525444abe6031b53418587, type: 3}
   knife: {fileID: 515505947808161852, guid: f3c23506ce59eb846bebd1800390a20c, type: 3}
   bombPos: {x: 0, y: 4, z: 0}
@@ -982,12 +982,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559535140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 982696823}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1559535142
 MonoBehaviour:

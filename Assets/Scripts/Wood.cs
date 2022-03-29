@@ -8,6 +8,7 @@ public class Wood : MonoBehaviour
     private float curTime;
     [SerializeField] private AnimationCurve rotation;
     [SerializeField] private GameObject knifeIcon;
+    [SerializeField] private GameObject hitParticles;
     [SerializeField] private GameObject bombochka, knife;
 
     public Vector3 bombPos, knifePos;
@@ -17,7 +18,8 @@ public class Wood : MonoBehaviour
     {
         for(int i = hp; i>=0; i--)
         {
-            Instantiate(knifeIcon, new Vector2(-4f,-8f+i),Quaternion.identity);
+            GameObject icon = Instantiate(knifeIcon, new Vector2(-4f,-8f+i),Quaternion.identity);
+            icon.transform.parent = knifeIcon.transform;
         }
         Instantiate(knife, knifePos, Quaternion. identity);
     }
@@ -35,24 +37,28 @@ public class Wood : MonoBehaviour
         {
             if (hp == 0)
             {
-                for (int i = transform.childCount - 1; i >= 0; i--)
-                {
-                    rb = transform.GetChild(i).GetComponent<Rigidbody2D>();
-                    rb.WakeUp();
-                    rb.gravityScale = 1;
-                    rb.bodyType = RigidbodyType2D.Dynamic;
-                    rb.AddForce(new Vector2(Random.Range(-100,100), Random.Range(-100,100)), ForceMode2D.Force);
-                    transform.GetChild(i).parent = null;
-                }
-                Destroy(gameObject);
-                Instantiate(bombochka, bombPos, Quaternion.identity);
+                LevelCompleted();
             }
             else if (hp > 0)
             {
+                Instantiate(hitParticles, collider.transform.position, Quaternion.identity);
                 Instantiate(knife, knifePos, Quaternion.identity);
                 hp--;
             }
         }
     }
-
+    private void LevelCompleted()
+    {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                rb = transform.GetChild(i).GetComponent<Rigidbody2D>();
+                transform.GetChild(i).parent = null;
+                rb.WakeUp();
+                rb.bodyType = RigidbodyType2D.Dynamic;
+                rb.gravityScale = 1;
+                
+            }
+            Destroy(gameObject);
+            Instantiate(bombochka, bombPos, Quaternion.identity);
+    }
 }
